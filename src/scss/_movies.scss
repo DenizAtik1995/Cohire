@@ -1,10 +1,6 @@
 //global colours
-$primanycolor: #001c28;
-$secondlycolor: #d5dc27;
-
-
-
-
+$primaryColor: #001c28;
+$secondaryColor: #d5dc27;
 
 .movies {
   margin: 50px 0 0 0;
@@ -13,59 +9,98 @@ $secondlycolor: #d5dc27;
     width: 100%;
     background-color: white;
     margin: 10px 0;
-    padding: 20px;
-    .movie__header {
+    padding: 14px;
 
-      h3{
+    font-size: 3.75vw;
+
+    &__header {
+      h3 {
         margin: 0;
+
+        color: $primaryColor;
+        font-size: 1.3em;
       }
-
-
     }
-      .movie__image {
-        width: 20%;
-        float: left;
 
-        img {
-          width: 100%;
-          height: auto;
+    &__image {
+      width: 32%;
+      float: left;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &__details {
+      position: relative;
+
+      width: 63%;
+      float: right;
+    }
+
+    &__rating {
+      position: absolute;
+      top: 5px;
+      right: 0;
+
+      padding: 3px 5px;
+
+      border-radius: 4px;
+      background-color: $secondaryColor;
+
+      span {
+        color: white;
+      }
+    }
+
+    &__genres {
+      p {
+        margin: 0;
+
+        span {
+          color: $secondaryColor;
+          font-size: 0.7em;
+          font-weight: 600;
         }
       }
-.movie__details{
-  width: 75%;
-  float: right;
-  padding: 1%;
-  position: relative;
-  .movie__rating{
-    padding: 3px 5px 3px 5px;
-    border-radius: 4px;
-    position: absolute;
-    right: 0;
-    top: 5px;
-    background-color: $secondlycolor ;
+    }
 
-  span{
-    color: white;
-  }
-  }
-.movie__header{
-  h3{
-color: $primanycolor;
-    font-size: 1.5em;
-  }
+    &__overview {
+      p {
+        position: relative;
 
-}
-  .movie__genres{
-    p{
-      margin: 0;
-      span {
-        color: $secondlycolor;
-        font-size: 10px;
-        font-weight: 600;
+        max-height: (1.25em * 5);
+
+        margin: .7em 0;
+
+        overflow: hidden;
+
+        font-size: 0.85em;
+        line-height: 1.3em;
+
+        &:after {
+          content: '';
+
+          position: absolute;
+          right: 0;
+          bottom: 0;
+
+          width: 60%;
+          height: 1.25em;
+
+          background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 70%,rgba(255,255,255,1) 100%);        }
       }
     }
-  }
-}
 
+    &__date {
+      p {
+        margin: 0;
+
+        font-size: 0.85em;
+        color: $secondaryColor;
+        font-weight: 200;
+      }
+    }
   }
 }

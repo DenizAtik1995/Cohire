@@ -3,6 +3,7 @@
 @import 'movies';
 @import 'searchbar';
 @import 'sidemenu';
+@import 'mixins';
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
 //global colours
@@ -11,14 +12,14 @@ $secondlycolor: #d5dc27;
 
 // text formatting
 
-body{
+body {
   background-color: #f5f6f8;
-  font-family: lato, Arial;
+  font-family: lato, arial, sans-serif;
 }
+
 p {
   font-size: 1em;
   color: $primanycolor;
-  font-family: lato;
 }
 
 .app {
@@ -26,7 +27,6 @@ p {
   margin: 0 auto;
 
 }
-
 
 
 .movies {
