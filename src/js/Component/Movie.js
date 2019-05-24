@@ -13,10 +13,28 @@ const Movie = (props) => {
 
   return (
     <div className="movie">
-      <header className="movie__header">
-        <div className="movie__details">
+
+      <div className="movie__image">
+        <img src={imagePath} width="1200" height="1800" alt={`Poster for ${movie.title}`}/>
+      </div>
+
+
+
+
+
+          <div className="movie__details">
+            <div className="movie__header">
           <h3>{movie.title}</h3>
-          <div className="movie__genres">
+
+            <div className="movie__rating">
+              <span>{movie.vote_average}</span>
+            </div>
+
+
+            </div>
+
+
+            <div className="movie__genres">
             <p>
               {
                 props.genres.filter(genre => {
@@ -27,19 +45,15 @@ const Movie = (props) => {
               }
             </p>
           </div>
+            <div className="movie__content">
+            <div className="movie__overview">
+              <p>{movie.overview}</p>
+            </div>
+
         </div>
-        <div className="movie__rating">
-          <span>{movie.vote_average}</span>
-        </div>
-      </header>
-      <div className="movie__image">
-        <img src={imagePath} width="1200" height="1800" alt={`Poster for ${movie.title}`}/>
-      </div>
-      <div className="movie__content">
-        <div className="movie__overview">
-          <p>{movie.overview}</p>
-        </div>
-      </div>
+          </div>
+
+
     </div>
   );
 };

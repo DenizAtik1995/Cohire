@@ -1,18 +1,71 @@
-.movie{
+//global colours
+$primanycolor: #001c28;
+$secondlycolor: #d5dc27;
+
+
+
+
+
+.movies {
   margin: 50px 0 0 0;
-  .movie-header{
-    background-color: white;
+
+  .movie {
     width: 100%;
-    margin: 10px 0 10px 0;
+    background-color: white;
+    margin: 10px 0;
+    padding: 20px;
+    .movie__header {
 
-  .img-wrapper{
-    width: 20%;
-    float: left;
+      h3{
+        margin: 0;
+      }
 
-    img{
-      width: 100%;
+
+    }
+      .movie__image {
+        width: 20%;
+        float: left;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+.movie__details{
+  width: 75%;
+  float: right;
+  padding: 1%;
+  position: relative;
+  .movie__rating{
+    padding: 3px 5px 3px 5px;
+    border-radius: 4px;
+    position: absolute;
+    right: 0;
+    top: 5px;
+    background-color: $secondlycolor ;
+
+  span{
+    color: white;
+  }
+  }
+.movie__header{
+  h3{
+color: $primanycolor;
+    font-size: 1.5em;
+  }
+
+}
+  .movie__genres{
+    p{
+      margin: 0;
+      span {
+        color: $secondlycolor;
+        font-size: 10px;
+        font-weight: 600;
+      }
     }
   }
+}
 
   }
 }
