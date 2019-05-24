@@ -1,0 +1,14 @@
+.sidemenu{
+display: none;
+  @media screen and (min-width: 800px) {
+
+display: block;
+    background-color: #001c28;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 100%;
+    z-index: 2;
+  }
+}

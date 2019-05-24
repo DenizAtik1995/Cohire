@@ -3,7 +3,9 @@ import '../scss/App.scss';
 import Header from "./Component/Header";
 import Form from "./Component/Form";
 import Movie from "./Component/Movie";
+import SideMenu from "./Component/SideMenu";
 import MovieAPI from './api/api';
+
 
 /**
  * @typedef {Object} MovieDef
@@ -13,6 +15,8 @@ import MovieAPI from './api/api';
  */
 
 class App extends Component {
+
+
 
   constructor() {
     super();
@@ -54,7 +58,7 @@ class App extends Component {
 
     if (this.state.movies === false) {
       Results = (
-        <h2>Please enter a search term</h2>
+        <h2>search</h2>
       );
     } else {
       /**
@@ -72,9 +76,14 @@ class App extends Component {
         : <h2>There were no movies found for: {this.state.inputValue}</h2>;
     }
 
+
+
     return (
       <div className="app">
+
+
         <Header />
+        <SideMenu />
         <Form handleSearch={this.handleSearch} />
         <div className="movies">
           {Results}
@@ -83,4 +92,5 @@ class App extends Component {
     );
   }
 }
+
 export default App;

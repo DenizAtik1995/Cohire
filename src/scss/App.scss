@@ -2,7 +2,7 @@
 @import 'layout';
 @import 'movies';
 @import 'searchbar';
-
+@import 'sidemenu';
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
 //global colours
@@ -25,52 +25,6 @@ p {
   width: calc(100% - 30px);
   margin: 0 auto;
 
-}
-
-.header {
-  height: 100px;
-  display: inline-flex;
-
-  .hamburger {
-    margin: 10px 0 0 0;
-    span {
-      width: 30px;
-      height: 3px;
-      border-radius: 2px;
-      background-color: #001c28;
-      display: block;
-      margin: 6px;
-      @media screen and (min-width: 500px) {
-        width: 40px;
-        height: 4px;
-        border-radius: 7px;
-        background-color: #001c28;
-        display: block;
-        margin: 9px;
-      }
-    }
-    span:last-child{
-      margin: 7px;
-
-      @media screen and (min-width: 500px) {
-        margin: 8px;
-        height: 3px;
-      }
-    }
-
-
-  }
-  .title {
-    p {
-      margin: 1em 0 0 1.3em;
-      font-size: 1em;
-      @media screen and (min-width: 500px) {
-        margin: 0.4em 0 0 0.6em;
-        font-size: 2em;
-      }
-
-    }
-  }
 }
 
 
