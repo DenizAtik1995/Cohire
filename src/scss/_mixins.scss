@@ -1,0 +1,22 @@
+$bp1: 400px;
+$bp2: 776px;
+$bp3: 924px;
+$bp4: 924px;
+$bpPrefix: min-width;
+
+@mixin bp($point) {
+
+    @if $point == bp-1 {
+      @media (min-width: $bp1) {
+        @content;
+      }
+    } @else if $point == bp-2 {
+      @media (min-width: $bp2) {
+        @content;
+      }
+    } @else if $point == bp-3 {
+      @media (min-width: $bp3) {
+        @content;
+      }
+    }
+}

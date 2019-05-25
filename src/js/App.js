@@ -3,7 +3,6 @@ import '../scss/App.scss';
 import Header from "./Component/Header";
 import Form from "./Component/Form";
 import Movie from "./Component/Movie";
-import SideMenu from "./Component/SideMenu";
 import MovieAPI from './api/api';
 
 
@@ -82,7 +81,7 @@ class App extends Component {
     return (
       <div className="app">
         <Header />
-        <SideMenu />
+
         <Form handleSearch={this.handleSearch} />
         <div className="movies">
           <span className="movies__total">{TotalResults}</span>
@@ -90,7 +89,21 @@ class App extends Component {
         </div>
       </div>
     );
+
+
+
+
   }
+
+
+
+
+
+
+
+
+
+
 }
 
 export default App;
