@@ -1,0 +1,102 @@
+
+.category-main{
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.container {
+  width: 23.8%;
+  position: absolute;
+  right: 25px;
+  top: 247px;
+
+  float: right;
+  background-color: white;
+  display: block;
+  padding: 20px;
+
+  @media screen and (min-width: 1500px) {
+    width: 24.2%;
+  }
+
+  h3{
+    margin-top: 0;
+  }
+}
+
+button.category {
+  text-align: left;
+
+  width: 100%;
+  font-size: 18px;
+
+  padding: 15px 35px;
+
+  cursor: pointer;
+  transition: background-color 0.5s linear;
+  position: relative;
+  margin-bottom: 0.5em;
+
+  border: none;
+  outline: none;
+  color: #444;
+
+  &:after, &:before {
+    display: block;
+
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    left: 0px;
+
+    width: 17px;
+    height: 3px;
+    z-index: 10;
+
+    background: black;
+    transition: background 0.5s ease, transform 0.5s ease;
+  }
+
+  &:before {
+    transform: rotate(90deg);
+  }
+
+  &.category.is-open {
+
+    &:before {
+      transform: rotate(0);
+    }
+  }
+}
+
+button.category:hover, button.category.is-open {
+  background-color: white;
+
+}
+.category-content {
+  overflow: hidden;
+
+  max-height: 0;
+  padding: 0 20px;
+
+  background-color: white;
+  transition: max-height 0.2s ease-in-out;
+}
+
+
+.checkbox-container{
+font-size: 2vh;
+  margin: 10px 0;
+  label{
+    color: #4c5b64;
+    font-weight: 300;
+    padding: 0 0 0 10px;
+  }
+  .mybox{
+    font-size: 30px;
+
+  }
+}
+

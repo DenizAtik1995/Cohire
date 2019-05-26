@@ -13,90 +13,116 @@ $secondlycolor: #d5dc27;
 
   }
   nav {
-      @media screen and (min-width: 992px) {
-        display: block;
+    @media screen and (min-width: 992px) {
+      display: block;
     }
   }
   .title {
     p {
-      margin: 1em 0 0 1.3em;
-      font-size: 1em;
-      @media screen and (min-width: 500px) {
-        margin: 0.4em 0 0 0.6em;
-        font-size: 2em;
-      }
+      font-size: 3.2vh;
 
+      margin: 0.45em 0px 0 0.5em;
     }
-  }
-}
-.toggle__on {
-  margin: 10px 0 0 0;
-  cursor: pointer;
-  span {
-    width: 30px;
-    height: 3px;
-    border-radius: 2px;
-    background-color: #001c28;
-    display: block;
-    margin: 6px;
-    @media screen and (min-width: 500px) {
-      width: 40px;
-      height: 4px;
-      border-radius: 7px;
-      background-color: #001c28;
-      display: block;
-      margin: 9px;
-    }
-  }
-  span:last-child {
-    margin: 7px;
 
-    @media screen and (min-width: 500px) {
-      margin: 8px;
-      height: 3px;
-    }
   }
+
 }
+
 .sidemenu__off {
   display: none;
 
 }
-.sidemenu__on {
 
+.sidemenu__on {
   display: block;
 
 }
-nav{
-  background-color: #001c28;
+
+.toggleoff {
+
+  display: flex;
+}
+
+.toggle__on {
+  margin: 10px 0 0 0;
+  cursor: pointer;
+
+  span {
+    display: block;
+    margin: 6px;
+
+    width: 30px;
+    height: 3px;
+
+    border-radius: 2px;
+
+    background-color: #001c28;
+
+    @media screen and (min-width: 500px) {
+      display: block;
+
+      width: 40px;
+      height: 4px;
+      margin: 9px;
+
+      border-radius: 7px;
+      background-color: #001c28;
+    }
+  }
+  span:last-child {
+    margin: 6px;
+    height: 3px;
+
+    @media screen and (min-width: 500px) {
+      margin: 9px;
+      height: 4px;
+    }
+  }
+}
+
+nav {
   position: absolute;
   top: 0;
+
   left: -260px;
   width: 260px;
   height: 100%;
+
   z-index: 2;
+
   -webkit-animation: slide 0.5s forwards;
   animation: slide 0.5s forwards;
 
+  background-color: #001c28;
 
   @-webkit-keyframes slide {
-    100% { left: 0; }
+    100% {
+      left: 0;
+    }
   }
 
   @keyframes slide {
-    100% { left: 0; }
+    100% {
+      left: 0;
+    }
   }
 
   h2 {
+
     width: calc(100% - 35px);
+
     margin: 35px auto 35px auto;
-    color: white;
+
     font-family: lato;
 
+    color: white;
+
     img {
-      float: right;
       position: relative;
+      float: right;
       top: 7px;
       width: 25px;
+
     }
 
   }
@@ -105,11 +131,13 @@ nav{
     width: 100%;
     padding: 0;
     li {
+      font-size: 20px;
+
+      cursor: pointer;
       padding: 20px 30px 22px 30px;
       list-style-type: none;
+
       color: white;
-      font-size: 20px;
-      cursor: pointer;
 
       &:hover {
         background-color: $secondlycolor;
@@ -125,18 +153,18 @@ nav{
 
       li:first-child {
         a {
-          color: white;
           display: block;
           font-size: 20px;
+
           border-bottom: 2px solid #293a44;
           line-height: 60px;
 
-
-          }
+          color: white;
+        }
         &:hover {
-          a{
-            background-color: $secondlycolor;
+          a {
             border-bottom: 2px solid $secondlycolor;
+            background-color: $secondlycolor;
           }
 
         }
@@ -144,6 +172,7 @@ nav{
 
       li {
         padding: 0px 0px 0px 30px;
+
         &:hover {
           a {
             color: white;
@@ -151,11 +180,12 @@ nav{
         }
         a {
           border-bottom: none;
-          color: #293a44;
-          line-height: 30px;
           padding: 0;
-          font-size: 16px;
 
+          font-size: 16px;
+          line-height: 30px;
+
+          color: #293a44;
         }
       }
     }

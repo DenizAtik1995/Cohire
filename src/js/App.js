@@ -74,7 +74,10 @@ class App extends Component {
 
           return <Movie key={movie.id} movie={movie} genres={this.state.genres} />
         })
-        : <h2>There were no movies found for: {this.state.inputValue}</h2>;
+        :
+        <div className="error-message">
+        <h2 >There were no movies found for: {this.state.inputValue}</h2>
+        </div>;
     }
 
     const TotalResults = this.state.total > 0 ? `${this.state.total} movies` : '';

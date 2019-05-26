@@ -23,7 +23,9 @@ export default class Form extends Component {
                 <span/>
                 <span/>
               </div>
-
+              <div className=" title">
+                <p>Discover</p>
+              </div>
             </div>
 
           </div>

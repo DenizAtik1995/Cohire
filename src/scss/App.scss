@@ -1,11 +1,9 @@
 @import 'header';
-@import 'layout';
 @import 'movies';
 @import 'searchbar';
 @import 'mixins';
 @import url('https://fonts.googleapis.com/css?family=Lato');
-@import 'Categories';
-
+@import 'categories';
 
 //global colours
 $primanycolor: #001c28;
@@ -14,8 +12,10 @@ $secondlycolor: #d5dc27;
 // text formatting
 
 body {
-  background-color: #f5f6f8;
+
   font-family: lato, arial, sans-serif;
+  background-color: #f5f6f8;
+
 }
 
 p {
@@ -29,17 +29,36 @@ p {
 
 }
 
-
 .movies {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+
   justify-content: space-between
 }
 
-// filter
+
 .filter-wrapper {
   width: 50px;
   background-color: #ccc;
   display: none;
+}
+
+.error-message {
+  margin: 0 auto;
+  max-width: 80%;
+
+  overflow: hidden;
+
+  @media screen and (min-width: 768px) {
+    max-width: 60%;
+  }
+  @media screen and (min-width: 998px) {
+    max-width: 46%;
+  }
+  @media screen and (min-width: 1200px) {
+    max-width: 600px;
+    width: 100%;
+
+  }
 }

@@ -5,24 +5,40 @@ $secondaryColor: #d5dc27;
 .movies {
   margin: 50px 0 0 0;
 
-  @media screen and (min-width: 990px) {
+  @media screen and (min-width: 1200px) {
     margin: 0;
     position: relative;
-    top: -40px;
+    top: -53px;
   }
 
-&__total{
-    margin: 0px 0 0 260px;
+  &__total {
+
+    color: #708088;
+    font-weight: 300;
+    margin: 0 0 10px 0;
+
+    @media screen and (min-width: 1200px){
+ margin:0 0 0 260px  ;
   }
 
+}
   .movie {
     width: 100%;
     background-color: white;
-    margin: 10px 0;
-    padding: 14px;
-    font-size: 2vw;
-    @media screen and (min-width: 990px) {
+    margin: 7.5px 0;
+    padding: 20px;
+    font-size: 3.6vw;
+
+
+
+    @media screen and (min-width: 668px) {
+      font-size: 2.6vw;
+    }
+    @media screen and (min-width: 998px) {
       margin: 20px 0 0 260px;
+    }
+    @media screen and (min-width: 1200px) {
+      font-size: 1.4vw;
     }
 
     &__header {
@@ -30,13 +46,18 @@ $secondaryColor: #d5dc27;
         margin: 0;
 
         color: $primaryColor;
-        font-size: 1.3em;
+
       }
     }
 
     &__image {
       width: 32%;
       float: left;
+
+      @media screen and (min-width: 668px) {
+
+        width: 20%;
+      }
 
       img {
         width: 100%;
@@ -47,8 +68,13 @@ $secondaryColor: #d5dc27;
     &__details {
       position: relative;
 
-      width: 63%;
+      width: 66%;
       float: right;
+      @media screen and (min-width: 668px) {
+
+        width: 77%;
+      }
+
     }
 
     &__rating {
@@ -72,8 +98,8 @@ $secondaryColor: #d5dc27;
 
         span {
           color: $secondaryColor;
-          font-size: 0.7em;
-          font-weight: 600;
+          font-size: 0.65em;
+          font-weight: 400;
         }
       }
     }
@@ -109,9 +135,12 @@ $secondaryColor: #d5dc27;
       p {
         margin: 0;
 
-        font-size: 0.85em;
+        font-size: 0.65em;
         color: $secondaryColor;
+        position: relative;
+        top: 10px;
         font-weight: 200;
+
       }
     }
   }

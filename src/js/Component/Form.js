@@ -22,12 +22,12 @@ export default class Form extends Component {
       <div className="filter-container">
       <div className="filter-search">
         <div className="input-wrapper">
-          <i className="fas fa-search" />
+          <img src="../../Images/search-icon-yellow.png" className="searchbar-icon" />
           <input type="text" onChange={this.onChangeSearch} placeholder="Search for Movies"/>
         </div>
         <div className="input-wrapper desktop-search">
-          <img src="../../Images/year-icon.png" className="fas fa-search" />
-          <input type="text" onChange={this.onChangeSearch} placeholder="Search for Movies"/>
+          <img src="../../Images/year-icon.png" className="filter-year"/>
+          <input type="text" className="filter-year" onChange={this.onChangeSearch} placeholder="Year of release"/>
         </div>
 
         <div className="filter">
