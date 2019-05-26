@@ -59,7 +59,7 @@ class App extends Component {
 
     if (this.state.movies === false) {
       Results = (
-        <h2>search</h2>
+        <h2></h2>
       );
     } else {
       /**

@@ -25,7 +25,7 @@ export default class Form extends Component {
           <i className="fas fa-search" />
           <input type="text" onChange={this.onChangeSearch} placeholder="Search for Movies"/>
         </div>
-        <div className="input-wrapper">
+        <div className="input-wrapper desktop-search">
           <img src="../../Images/year-icon.png" className="fas fa-search" />
           <input type="text" onChange={this.onChangeSearch} placeholder="Search for Movies"/>
         </div>
