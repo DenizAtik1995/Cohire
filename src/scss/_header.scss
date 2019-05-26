@@ -5,7 +5,7 @@ $secondlycolor: #d5dc27;
   height: 100px;
   display: inline-flex;
 
-  .header-hamburger {
+  &__hamburger {
 
     @media screen and (min-width: 768px) {
       display: none;
@@ -13,11 +13,10 @@ $secondlycolor: #d5dc27;
 
   }
   nav {
-      @media screen and (min-width: 768px) {
+      @media screen and (min-width: 992px) {
         display: block;
     }
   }
-
   .title {
     p {
       margin: 1em 0 0 1.3em;
@@ -30,9 +29,7 @@ $secondlycolor: #d5dc27;
     }
   }
 }
-
 .toggle__on {
-
   margin: 10px 0 0 0;
   cursor: pointer;
   span {
@@ -59,14 +56,11 @@ $secondlycolor: #d5dc27;
       height: 3px;
     }
   }
-
 }
-
 .sidemenu__off {
   display: none;
 
 }
-
 .sidemenu__on {
 
   display: block;

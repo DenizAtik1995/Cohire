@@ -5,13 +5,25 @@ $secondaryColor: #d5dc27;
 .movies {
   margin: 50px 0 0 0;
 
+  @media screen and (min-width: 990px) {
+    margin: 0;
+    position: relative;
+    top: -40px;
+  }
+
+&__total{
+    margin: 0px 0 0 260px;
+  }
+
   .movie {
     width: 100%;
     background-color: white;
     margin: 10px 0;
     padding: 14px;
-
-    font-size: 3.75vw;
+    font-size: 2vw;
+    @media screen and (min-width: 990px) {
+      margin: 20px 0 0 260px;
+    }
 
     &__header {
       h3 {

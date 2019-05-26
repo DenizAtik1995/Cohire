@@ -3,6 +3,7 @@ import '../scss/App.scss';
 import Header from "./Component/Header";
 import Form from "./Component/Form";
 import Movie from "./Component/Movie";
+import Categories from "./Component/Categories";
 import MovieAPI from './api/api';
 
 
@@ -87,6 +88,7 @@ class App extends Component {
           <span className="movies__total">{TotalResults}</span>
           {Results}
         </div>
+<Categories />
       </div>
     );
 
@@ -94,14 +96,6 @@ class App extends Component {
 
 
   }
-
-
-
-
-
-
-
-
 
 
 }
