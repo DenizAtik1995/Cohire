@@ -1,9 +1,10 @@
 import 'whatwg-fetch';
+import settings  from '../../config'
 
 class MovieAPI {
 
   api = {
-    key: process.env.REACT_APP_MOVIE_API_KEY,
+    key: settings.API_KEY,
     root: 'http://api.themoviedb.org/3/',
     endpoints: {
       search: 'search/movie',
