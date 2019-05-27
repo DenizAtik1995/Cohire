@@ -1,26 +1,17 @@
 
-.category-main{
+.category-main {
   @media screen and (max-width: 1200px) {
     display: none;
   }
 }
 
 .container {
-  width: 23.8%;
-  position: absolute;
-  right: 25px;
-  top: 247px;
 
-  float: right;
+  margin-top: 15px;
   background-color: white;
-  display: block;
   padding: 20px;
 
-  @media screen and (min-width: 1500px) {
-    width: 24.2%;
-  }
-
-  h3{
+  h3 {
     margin-top: 0;
   }
 }
@@ -75,26 +66,29 @@ button.category:hover, button.category.is-open {
   background-color: white;
 
 }
+
 .category-content {
   overflow: hidden;
 
   max-height: 0;
-  padding: 0 20px;
+
 
   background-color: white;
   transition: max-height 0.2s ease-in-out;
 }
 
-
-.checkbox-container{
-font-size: 2vh;
+.checkbox-container {
   margin: 10px 0;
-  label{
+
+  font-size: 2vh;
+  line-height: 0;
+
+  label {
     color: #4c5b64;
     font-weight: 300;
     padding: 0 0 0 10px;
   }
-  .mybox{
+  .mybox {
     font-size: 30px;
 
   }

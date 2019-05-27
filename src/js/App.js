@@ -3,7 +3,6 @@ import '../scss/App.scss';
 import Header from "./Component/Header";
 import Form from "./Component/Form";
 import Movie from "./Component/Movie";
-import Categories from "./Component/Categories";
 import MovieAPI from './api/api';
 
 
@@ -22,29 +21,51 @@ class App extends Component {
     this.state = {
       inputValue: '',
       movies: false,
-      genres: {},
-      total: 0
+      genres: [],
+      total: 0,
+      errorMessage: false
     };
   }
 
   componentDidMount() {
-    this.api.getGenres().then(res => res.json()).then(data => {
-      this.setState({
-        genres: data.genres
+    this.api.getGenres(
+      data => {
+        this.setState({
+          genres: data.genres,
+          errorMessage: false
+        });
+      },
+      error => {
+        /**
+         * We could send contents of error to a server to log the results, but this is out of scope for this test
+         */
+        this.setState({
+          errorMessage: 'There was an error, please try again later.'
+        })
       });
-    });
   }
 
   // Handles the input field
   handleSearch = (inputValue) => {
-    if (inputValue.length > 2) {
-      this.api.searchMovies(inputValue).then(res => { console.log(res); return res.json(); }).then((data) => {
-        this.setState({
-          inputValue,
-          movies: data.results,
-          total: data.total_results
-        });
-      });
+    if (inputValue.length > 0) {
+      this.api.searchMovies(inputValue,
+        data => {
+          this.setState({
+            inputValue,
+            movies: data.results,
+            total: data.total_results,
+            errorMessage: false
+          });
+        },
+        error => {
+          /**
+           * we could send contents of error to a server to log the results, but this is out of scope for this test
+           */
+          this.setState({
+            errorMessage: 'There was an error, please try again later.'
+          })
+        }
+      );
     } else {
       this.setState({
         inputValue,
@@ -56,51 +77,51 @@ class App extends Component {
 
   render() {
     let Results;
+    const { inputValue, movies, total, errorMessage, genres } = this.state;
 
-    if (this.state.movies === false) {
-      Results = (
-        <h2></h2>
-      );
+    if (movies === false) {
+      Results = '';
     } else {
       /**
        * @type {MovieDef} movie
        */
 
-      Results = this.state.movies.length > 0
-        ? this.state.movies.map(movie => {
+      Results = movies.length > 0
+        ? movies.map(movie => {
           if (movie.poster_path === null) {
             movie.poster_path = false;
           }
 
-          return <Movie key={movie.id} movie={movie} genres={this.state.genres} />
+          return <Movie key={movie.id} movie={movie} genres={genres} />
         })
         :
-        <div className="error-message">
-        <h2 >There were no movies found for: {this.state.inputValue}</h2>
-        </div>;
+        (
+          <div className="error-message">
+            <h2>
+              There were no movies found for:
+              {inputValue}
+            </h2>
+          </div>
+        );
     }
 
-    const TotalResults = this.state.total > 0 ? `${this.state.total} movies` : '';
+    const TotalResults = total > 0 ? `${total} movies` : '';
+    const ErrorMsg = errorMessage ? <h3 className="error-message">{errorMessage}</h3> : '';
 
     return (
       <div className="app">
         <Header />
 
-        <Form handleSearch={this.handleSearch} />
+        <Form handleSearch={this.handleSearch} genres={genres} />
+
         <div className="movies">
           <span className="movies__total">{TotalResults}</span>
+          {ErrorMsg}
           {Results}
         </div>
-<Categories />
       </div>
     );
-
-
-
-
   }
-
-
 }
 
 export default App;

@@ -3,7 +3,7 @@ import 'whatwg-fetch';
 class MovieAPI {
 
   api = {
-    key: 'd5989da1517d7182f1ae5529fcbdb122',
+    key: process.env.REACT_APP_MOVIE_API_KEY,
     root: 'http://api.themoviedb.org/3/',
     endpoints: {
       search: 'search/movie',
@@ -11,16 +11,43 @@ class MovieAPI {
     }
   };
 
-  getGenres() {
-    return window.fetch(`${this.api.root}${this.api.endpoints.genre}?api_key=${this.api.key}`)
+  /**
+   * @param response {Response}
+   * @returns {Promise|PromiseRejectionEvent}
+   */
+  static status(response) {
+    if (response.status >= 200 && response.status < 300) {
+      return Promise.resolve(response);
+    } else {
+      return Promise.reject(new Error(`${response.status}, ${response.statusText}`));
+    }
+  }
+
+  request(url, successCb, errCb) {
+    window.fetch(url)
+      .then(MovieAPI.status)
+      .then(res => res.json())
+      .then(successCb)
+      .catch((error) => {
+        errCb(error);
+      });
   }
 
   /**
-   *
-   * @param query { String } Partial or full query of movie title, used to query the API
+   * @param successCb {Function} Callback
+   * @param errCb {Function}
    */
-  searchMovies(query) {
-    return window.fetch(`${this.api.root}${this.api.endpoints.search}?query=${query}&api_key=${this.api.key}`);
+  getGenres(successCb, errCb) {
+    this.request(`${this.api.root}${this.api.endpoints.genre}?api_key=${this.api.key}`, successCb, errCb);
+  }
+
+  /**
+   * @param query {String}
+   * @param successCb {Function}
+   * @param errCb {Function}
+   */
+  searchMovies(query, successCb, errCb) {
+    this.request(`${this.api.root}${this.api.endpoints.search}?query=${query}&api_key=${this.api.key}`, successCb, errCb);
   }
 
 }

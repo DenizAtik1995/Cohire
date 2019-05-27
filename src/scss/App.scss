@@ -1,42 +1,43 @@
+@import 'variables';
+@import 'mixins';
 @import 'header';
 @import 'movies';
 @import 'searchbar';
-@import 'mixins';
 @import url('https://fonts.googleapis.com/css?family=Lato');
 @import 'categories';
 
-//global colours
-$primanycolor: #001c28;
-$secondlycolor: #d5dc27;
+div, section, header, * {
+  box-sizing: border-box;
+}
 
-// text formatting
+.clr {
+  clear: both;
+}
 
 body {
+  margin: 0;
 
-  font-family: lato, arial, sans-serif;
   background-color: #f5f6f8;
 
+  font-family: lato, arial, sans-serif;
 }
 
 p {
   font-size: 1em;
-  color: $primanycolor;
+  color: $primaryColor;
 }
 
 .app {
   width: calc(100% - 30px);
   margin: 0 auto;
 
+  @include bp(bp-3) {
+    width: calc(100% - #{$sidemenuWidth});
+
+    padding: 0 45px;
+    margin-left: $sidemenuWidth;
+  }
 }
-
-.movies {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-
-  justify-content: space-between
-}
-
 
 .filter-wrapper {
   width: 50px;
@@ -49,6 +50,9 @@ p {
   max-width: 80%;
 
   overflow: hidden;
+
+  font-weight: bold;
+  color: red;
 
   @media screen and (min-width: 768px) {
     max-width: 60%;

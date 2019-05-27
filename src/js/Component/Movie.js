@@ -47,6 +47,7 @@ const Movie = (props) => {
           </div>
         </div>
       </div>
+      <div className="clr" />
     </div>
   );
 };

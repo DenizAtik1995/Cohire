@@ -6,75 +6,85 @@ export default class Form extends Component {
   constructor(props) {
     super(props);
     this.state = false;
+    this.handleHamburger = this.handleHamburger.bind(this);
   }
 
+  handleHamburger() {
+    const { active } = this.state;
+    this.setState({
+      active: !active
+    });
+  }
 
   render() {
-    return (
-      <div>
-        <div className="header">
+    const { active } = this.state;
+    return [
+      (
+        <header key="header" className="header">
+          <div className={`header__hamburger header__hamburger--${active ? 'on' : 'off'}`}>
+            <div
+              className={active ? "toggleon" : "toggleoff"}
+              role="button"
+              tabIndex="0"
+              onClick={this.handleHamburger}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter') {
+                  this.handleHamburger(event)
+                }
+              }}
+            >
 
-          <div className="header-hamburger">
-            <div className={this.state.active ? "toggleon" : "toggleoff"}
-                 onClick={() => this.setState({ active: !this.state.active })}>
+              <div className={`toggle toggle--${active ? 'on' : 'off'}`}>
+                <span />
+                <span />
+                <span />
+              </div>
 
-              <div className={this.state.active ? 'toggle__off' : 'toggle__on'}>
-                <span/>
-                <span/>
-                <span/>
-              </div>
-              <div className=" title">
-                <p>Discover</p>
-              </div>
             </div>
 
           </div>
 
-<div className="header-desktop">
+          <div className="title">
+            <p>Discover</p>
+          </div>
+        </header>
+      ),
+      (
+        <nav key="navigation" className={`sidemenu sidemenu--${active ? "on" : "off"}`}>
+          <h2>
+            Wesley
+            <img src="../../Images/arrow-icon.png" alt="" />
+          </h2>
 
-          <nav className={ this.state.active ? "sidemenu__on" : " sidemenu__off"} >
+          <ul className="main-menu">
+            <li>
+              <a href="#123"> Discover</a>
+            </li>
 
-            <h2> Wesley<img src="../../Images/arrow-icon.png" alt=""/></h2>
-
-            <ul className="main-menu">
+            <ul className="sub-menu">
+              <li><a href="#123"> Watched</a></li>
               <li>
-                <a> Discover</a>
+                <a href="#123">Movies </a>
               </li>
-
-              <ul className="sub-menu">
-                <li><a> Watched</a></li>
-                <li>
-                  <a >Movies </a>
-                </li>
-                <li>
-                  <a>Tv shows</a>
-                </li>
-              </ul>
-
-              <ul className="sub-menu">
-
-                <li>
-                  <a> Saved</a></li>
-                <li>
-                  <a>Movies </a>
-                </li>
-                <li>
-                  <a >Tv shows</a>
-                </li>
-
-              </ul>
-
-
+              <li>
+                <a href="#123">Tv shows</a>
+              </li>
             </ul>
 
-
-          </nav>
-
-        </div>
-      </div>
-      </div>
-    );
+            <ul className="sub-menu">
+              <li>
+                <a href="#123"> Saved</a>
+              </li>
+              <li>
+                <a href="#123">Movies </a>
+              </li>
+              <li>
+                <a href="#123">Tv shows</a>
+              </li>
+            </ul>
+          </ul>
+        </nav>
+      )
+    ];
   }
-
-
 }
