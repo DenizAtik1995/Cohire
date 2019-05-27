@@ -29,9 +29,9 @@ const Categories = props => {
   return (
     <div className="category-main">
       <div className="container">
-        <h3>Movies</h3>
+        <h3>Movie</h3>
 
-        <button className="category">Select Genre (s)</button>
+        <button className="category">Select gsenre(s)</button>
         <div className="category-content">
 
           {genreComponents}

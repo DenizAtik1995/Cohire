@@ -24,7 +24,7 @@ export default class Form extends Component {
         <div className="filter-search">
           <div className="input-wrapper">
             <img src="../../Images/search-icon-yellow.png" alt="search" className="searchbar-icon"/>
-            <input type="text" onChange={this.onChangeSearch} placeholder="Search for Movies"/>
+            <input type="text" onChange={this.onChangeSearch} placeholder="Search for movies"/>
           </div>
           <div className="input-wrapper desktop-search">
             <img src="../../Images/year-icon.png" alt="date" className="filter-year"/>

@@ -6,19 +6,24 @@
     bottom: 14px;
     display: block;
 
-    width: 25%;
-    margin: 100px 0 0 15px;
+    width: 29%;
+    margin: 121px 0 0 15px;
   }
+  @media screen and (min-width: 1400px) {
+    width: 25%;
+
+  }
+
 
   .filter-search {
     display: flex;
 
     @media screen and (min-width: 998px) {
-      margin: 30px 0 30px 30px;
+      margin: 60px 0 30px 30px;
     }
 
     @media screen and (min-width: 1200px) {
-      padding: 10px 20px 20px;
+      padding: 15px 20px 20px;
 
       display: block;
 
@@ -102,14 +107,28 @@
       input[type="text"] {
         position: relative;
 
-        font-weight: 100;
-
+        font-weight: 500;
         color: $secondaryColor;
 
         @media screen and (min-width: 500px) {
           bottom: 0;
         }
+
+        @media screen and (min-width: 1200px) {
+        font-size: 18px;
+          top: 1px;
+
+        }
+
+
+
       }
+      .filter-year{
+        position: relative;
+        top: 3px;
+      }
+
+
 
       .searchbar-icon {
         position: relative;

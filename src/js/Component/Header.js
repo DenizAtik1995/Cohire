@@ -53,21 +53,24 @@ export default class Form extends Component {
         <nav key="navigation" className={`sidemenu sidemenu--${active ? "on" : "off"}`}>
           <h2>
             Wesley
-            <img src="../../Images/arrow-icon.png" alt="" />
+            <img src="../../Images/arrow-icon.png" alt=" arrow icon" />
           </h2>
 
           <ul className="main-menu">
             <li>
-              <a href="#123"> Discover</a>
+              <a href="#123"> Discover
+                <img className="menu-icon" src="../../Images/search-icon-white.png" alt=" search icon" />
+              </a>
             </li>
 
             <ul className="sub-menu">
-              <li><a href="#123"> Watched</a></li>
-              <li>
+              <li  >
+                <a href="#123"> Watched</a></li>
+              <li className="first-element">
                 <a href="#123">Movies </a>
               </li>
               <li>
-                <a href="#123">Tv shows</a>
+                <a href="#123">TV Shows</a>
               </li>
             </ul>
 
@@ -75,11 +78,11 @@ export default class Form extends Component {
               <li>
                 <a href="#123"> Saved</a>
               </li>
-              <li>
+              <li className="first-element">
                 <a href="#123">Movies </a>
               </li>
               <li>
-                <a href="#123">Tv shows</a>
+                <a href="#123">Tv Shows</a>
               </li>
             </ul>
           </ul>

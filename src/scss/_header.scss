@@ -39,10 +39,10 @@
 
   span {
     display: block;
-    margin: 6px;
+    margin: 7px;
 
     width: 30px;
-    height: 3px;
+    height: 4px;
 
     border-radius: 2px;
     background-color: #001c28;
@@ -51,8 +51,8 @@
   }
 
   span:last-child {
-    margin: 6px;
-    height: 3px;
+    margin: 7px;
+    height: 4px;
   }
 
   &--on {
@@ -61,7 +61,8 @@
     }
 
     span:nth-child(1) {
-      transform: translateY(9px) rotate(45deg);
+      transform: translateY(11px) rotate(45deg);
+      height: 3px;
     }
 
     span:nth-child(2) {
@@ -69,7 +70,9 @@
     }
 
     span:nth-child(3) {
-      transform: translateY(-9px) rotate(-45deg);
+      transform: translateY(-11px) rotate(-45deg);
+    height: 3px;
+
     }
   }
 
@@ -108,18 +111,18 @@
   }
 
   h2 {
-    width: calc(100% - 35px);
+    width: calc(100% - 70px);
 
     margin: 35px auto 35px auto;
 
     font-family: lato, arial, sans-serif;
     color: white;
-
+font-size: 1.9em;
     img {
       position: relative;
       float: right;
-      top: 7px;
-      width: 25px;
+      top: 10px;
+      width: 33px;
     }
   }
 
@@ -127,13 +130,17 @@
     width: 100%;
     padding: 0;
 
+    .menu-icon{
+      float: right;
+      width: 26px;
+    }
+
     li {
-      font-size: 20px;
-
+      font-size: 1.6em;
       cursor: pointer;
-      padding: 20px 30px 22px 30px;
+      padding: 20px 35px 20px 35px;
       list-style-type: none;
-
+      font-weight: 300;
 
       &:hover {
         background-color: $secondaryColor;
@@ -150,13 +157,26 @@
     .sub-menu {
       padding: 0px 0px 22px 0px;
 
+      .first-element{
+        margin-top: 20px;
+      }
+
       li:first-child {
+
+
+
+
         a {
           display: block;
-          font-size: 20px;
+
+          font-size: 1em;
+          cursor: pointer;
+          list-style-type: none;
+          font-weight: 400;
+
 
           border-bottom: 2px solid #293a44;
-          line-height: 60px;
+          line-height: 67px;
 
           color: white;
         }
@@ -181,10 +201,10 @@
           border-bottom: none;
           padding: 0;
 
-          font-size: 16px;
-          line-height: 30px;
+          font-size: 0.8em;
+          line-height: 37px;
 
-          color: #293a44;
+          color: #6d7a81;
         }
       }
     }
