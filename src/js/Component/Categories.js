@@ -31,7 +31,7 @@ const Categories = props => {
       <div className="container">
         <h3>Movie</h3>
 
-        <button className="category">Select gsenre(s)</button>
+        <button className="category">Select genre(s)</button>
         <div className="category-content">
 
           {genreComponents}
