@@ -15,8 +15,7 @@
 
 
 ### Development
-    Projects such as create-react-app, nwb and react-slingshot have been used to setup development envs.
-    The project was created using create react app
+    The project was created using create-react-app
     
     Install all the required packages/dependencies using Npm
     
