@@ -2,6 +2,9 @@
 
 
 
+<img width="1640" alt="Screenshot 2019-05-28 at 02 50 07" src="https://user-images.githubusercontent.com/50967378/58445372-53558580-80f4-11e9-8ad9-ffcb2a4d9c36.png">
+
+
 ### Installation
      $ git clone https://github.com/DenizAtik1995/Cohire.git
      
